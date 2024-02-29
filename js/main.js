@@ -27,7 +27,7 @@ function changeBGImage() {
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
 	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 }
-
+ 
 function handleStartDrag() { 
 	console.log('started dragging this piece:', this);
 	// store a reference to the puzzle piece image that we're dragging
@@ -45,10 +45,17 @@ function handleDrop(e) {
 	e.preventDefault();
 	console.log('dropped something on me');
 	// bug fix #1 should go here, and it's at most 3 lines of JS code
-
+	if(!this.hasAttribute('data-occupied')) {
+		this.setAttribute('data-occupied', 'true');
+	
 	// this line is going to move the dragged piece from the left side of the board
 	// into whatever drop zone we choose. appendChild means "add element to the container"
 	this.appendChild(draggedPiece);
+	}
+	else {
+		console.log('space is already occupied.');
+		this.removeAttribute('data-occupied');
+	}
 }
 // step 2
 // event handling always goes at the bottom => 
