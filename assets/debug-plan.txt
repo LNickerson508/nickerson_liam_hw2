@@ -1,0 +1,7 @@
+1. make it so that pieces cannot be placed on other pieces
+    - make the java recognize that there is a piece present
+    - when there is a piece present, make it so that attempting to place it returns it to where the piece originally was
+    - make a console log stating that a piece cannot be placed on another piece
+
+2. make it so that changing the background changes the pieces available to the user to match that background
+
